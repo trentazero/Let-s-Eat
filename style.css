@@ -7,12 +7,13 @@ body{
 }
 
 h4{
-    ;
+  color:red;
 }
 
 h6{
-  color:red;
+    color:#C1392B;
 }
+
 
 img{
   width: 50%;
@@ -20,10 +21,20 @@ img{
 }
 
 .cuisine {
-  white-space: nowrap;
+  white-space: wrap;
 }
 
 .map{
 
-margin-bottom:
+margin-bottom;
+}
+
+A:link, A:visited {
+  text-decoration: none;
+  color:#C1392B;
+}
+
+A:active, A:hover {
+  color: white;
+  background:#C1392B;
 }

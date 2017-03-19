@@ -1,15 +1,13 @@
 body{
   font-family: Verdana, Arial, Helvetica, sans-serif;
   background-color: LemonChiffon;
+  background-image: -webkit-gradient(linear, left top, left bottom,
+  from(#FFFAF0), to(LemonChiffon),color-stop(4, #FFFAF0));
   text-align:center;
   padding: 2 2 em;
   color:red;
 }
 
-/* Prepare yourself to eat!*/
-h4{
-  color:red;
-}
 
 /*images*/
 img{
@@ -18,18 +16,80 @@ img{
   border-radius: 2em;
 }
 
+#where{
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  background: #C1392B;
+  padding:12px;
+  color:white;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+#who{
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    background: #C1392B;
+    padding:5px;
+    color:white;
+    font-size: 19px;
+    font-weight: bold;
+}
+
 .cuisine {
   white-space: wrap;
-  color:red;
+  color:white;
 }
 
-.map{
+#searchButtom{
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  background: #C1392B;
+  padding:5px;
+  color:white;
+  font-size: 19px;
+  font-weight: bold;
 
-margin-bottom;
 }
 
-.myArea{
-  border-radius: 2em;
+#searchButtom:active {
+  position: relative;
+}
+
+#searchButtom:hover {
+ background: #F7DAA2;
+ color:white;
+ top: 4px;
+ /*gradient*/
+ background-image: -webkit-gradient(linear, left top, left bottom,
+  from(#C1392B), to(#F7DAA2),color-stop(0.4, #C1392B));
+
+}
+
+/*map with shadow effect*/
+#map{
+  border: 1px dashed #C1392B;
+  margin-bottom;
+  padding: 0px;
+  border-radius: 10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+}
+
+/*results Area with shadow effect*/
+#resultsArea{
+  height: 40%;
+  border: 1px dashed #C1392B;
+	padding: 14px;
+  border-radius: 10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
 }
 
 /*mouse hover*/
@@ -56,10 +116,10 @@ margin: 1.2em 33 2.5em;
 /* footer*/
 h6{
     color:#C1392B;
-    
+
 }
 
 #footer{
   height: 100px;
-  background-color: white;
+  background-color: LemonChiffon;
 }

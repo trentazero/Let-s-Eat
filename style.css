@@ -2,26 +2,25 @@ body{
   font-family: Verdana, Arial, Helvetica, sans-serif;
   background-color: LemonChiffon;
   text-align:center;
-  padding: 0 2 em;
+  padding: 2 2 em;
   color:red;
 }
 
+/* Prepare yourself to eat!*/
 h4{
   color:red;
 }
 
-h6{
-    color:#C1392B;
-}
-
-
+/*images*/
 img{
   width: 50%;
   height: auto;
+  border-radius: 2em;
 }
 
 .cuisine {
   white-space: wrap;
+  color:red;
 }
 
 .map{
@@ -29,6 +28,11 @@ img{
 margin-bottom;
 }
 
+.myArea{
+  border-radius: 2em;
+}
+
+/*mouse hover*/
 A:link, A:visited {
   text-decoration: none;
   color:#C1392B;
@@ -39,10 +43,23 @@ A:active, A:hover {
   background:#C1392B;
 }
 
+/*horizontal bars*/
 hr
 {
 color: #C1392B;
 background: #C1392B;
-border: 3;
+border: 2;
 height: 4px;
+margin: 1.2em 33 2.5em;
+}
+
+/* footer*/
+h6{
+    color:#C1392B;
+    
+}
+
+#footer{
+  height: 100px;
+  background-color: white;
 }

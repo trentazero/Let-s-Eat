@@ -38,3 +38,11 @@ A:active, A:hover {
   color: white;
   background:#C1392B;
 }
+
+hr
+{
+color: #C1392B;
+background: #C1392B;
+border: 3;
+height: 4px;
+}

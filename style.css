@@ -63,17 +63,21 @@ img{
  /*gradient*/
  background-image: -webkit-gradient(linear, left top, left bottom,
   from(#C1392B), to(#F7DAA2),color-stop(0.4, #C1392B));
+}
 
+#second{
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  background: #C1392B;
+  padding:5px;
+  color:white;
+  font-size: 19px;
+  font-weight: bold;
 }
 
 /*map with shadow effect*/
 #map{
-  border: 1px dashed #C1392B;
-  margin-bottom;
-  padding: 0px;
-  border-radius: 10px;
-  -webkit-border-radius:10px;
-  -moz-border-radius: 10px;
+  border: 1px solid #C1392B;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
   -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
   -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
@@ -81,11 +85,7 @@ img{
 
 /*results Area with shadow effect*/
 #resultsArea{
-  height: 40%;
-  border: 1px dashed #C1392B;
-	padding: 14px;
-  border-radius: 10px;
-  -webkit-border-radius:10px;
+  border: 1px solid #C1392B;
   -moz-border-radius: 10px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
   -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);

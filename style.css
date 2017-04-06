@@ -1,174 +1,205 @@
 /*Setting a gradient for the background and defyning the fonts (type and colour) */
-body{
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-  background-color: LemonChiffon;
-  background-image: -webkit-gradient(linear, left top, left bottom,
-  from(#FFFAF0), to(LemonChiffon),color-stop(4, #FFFAF0));
-  text-align:center;
-  padding: 2 2 em;
-  color:red;
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: LemonChiffon;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFAF0), to(LemonChiffon), color-stop(4, #FFFAF0));
+    text-align: center;
+    padding: 2 2 em;
+    color: red;
 }
 
 
 /*images*/
-img{
-  width: 50%;
-  height: auto;
-  border-radius: 2em;
+
+img {
+    width: 50%;
+    height: auto;
+    border-radius: 2em;
 }
+
 
 /*setting a red background and more options*/
-#where{
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  background: #C1392B;
-  padding:12px;
-  color:white;
-  font-size: 19px;
-  font-weight: bold;
-}
 
-/*setting the design of the combo box*/
-#who{
+#where {
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     background: #C1392B;
-    padding:5px;
-    color:white;
+    padding: 12px;
+    color: white;
     font-size: 19px;
     font-weight: bold;
 }
 
-/*setting wrap for cousine options*/
-.cuisine {
-  white-space: wrap;
-  color:white;
+
+/*setting the design of the combo box*/
+
+#who {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    background: #C1392B;
+    padding: 5px;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
 }
+
+
+/*setting wrap for cousine options*/
+
+.cuisine {
+    white-space: wrap;
+    color: white;
+}
+
 
 /*setting the design of the search button*/
-#searchButtom{
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  background: #C1392B;
-  padding:5px;
-  color:white;
-  font-size: 19px;
-  font-weight: bold;
 
+#searchButtom {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    background: #C1392B;
+    padding: 5px;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
 }
+
 
 /*setting the design of the search button: when active*/
+
 #searchButtom:active {
-  position: relative;
+    position: relative;
 }
+
 
 /*setting the design of the search button: when the mouse is hover (gradient)*/
+
 #searchButtom:hover {
- background: #F7DAA2;
- color:white;
- top: 4px;
- /*gradient*/
- background-image: -webkit-gradient(linear, left top, left bottom,
-  from(#C1392B), to(#F7DAA2),color-stop(0.4, #C1392B));
+    background: #F7DAA2;
+    color: white;
+    top: 4px;
+    /*gradient*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#C1392B), to(#F7DAA2), color-stop(0.4, #C1392B));
 }
+
 
 /*setting the design of the google maps place holder: borders radius*/
-#placeHolderMaps{
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  background: #C1392B;
-  padding:5px;
+
+#placeHolderMaps {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    background: #C1392B;
+    padding: 5px;
 }
+
 
 /*place holder map with shadow effect*/
-#map{
-  border: 1px solid #C1392B;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
-  -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
-  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+
+#map {
+    border: 1px solid #C1392B;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
 }
+
 
 /*results Area with shadow effect*/
-#resultsArea{
-  border: 1px solid #C1392B;
-  -moz-border-radius: 10px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
-  -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
-  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+
+#resultsArea {
+    border: 1px solid #C1392B;
+    -moz-border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
 }
 
+
 /*Footer: mouse hover link/visited/active*/
+
 A:link, A:visited {
-  text-decoration: none;
-  color:#C1392B;
+    text-decoration: none;
+    color: #C1392B;
 }
 
 A:active, A:hover {
-  color: white;
-  background:#C1392B;
+    color: white;
+    background: #C1392B;
 }
+
 
 /*horizontal bar's design*/
-hr
-{
-color: #C1392B;
-background: #C1392B;
-border: 2;
-height: 4px;
-margin: 1.2em 33 2.5em;
+
+hr {
+    color: #C1392B;
+    background: #C1392B;
+    border: 2;
+    height: 4px;
+    margin: 1.2em 33 2.5em;
 }
+
 
 /*Footer colour*/
-h6{
-    color:#C1392B;
 
+h6 {
+    color: #C1392B;
 }
+
 
 /*Footer background*/
-#footer{
-  height: 100px;
-  background-color: LemonChiffon;
+
+#footer {
+    height: 100px;
+    background-color: LemonChiffon;
 }
 
+
 /*Responsive*/
+
 * {
     box-sizing: border-box;
 }
 
+
 /*Responsive on medium screen*/
-@media screen and (min-width: 320px) and (max-width: 720px){
-  img{
-    width: 80%;
-    height: auto;
-    border-radius: 2em;
-  }  }
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+    img {
+        width: 80%;
+        height: auto;
+        border-radius: 2em;
+    }
+}
+
 
 /*Responsive on Smartphones*/
- @media screen and (min-width: 120px) and (max-width: 320px){
-   .cuisine{
-     width:25%;
-     margin-left: auto;
-     margin-right: auto;
-   }
-   #who{
-     height: 20%;
-   }
-   #searchButtom{
-     height: 20%;
-     width: 70%;
-   }
-   h6{
-     width:25%;
-     margin-left: auto;
-     margin-right: auto;
-   }
-   #footer{
-     height: 220px;
-     float:center;
-     background-color: LemonChiffon;
-   }
-   img{
-     width: 100%;
-     height: auto;
-     border-radius: 2em;
-   }  }
+
+@media screen and (min-width: 120px) and (max-width: 320px) {
+    .cuisine {
+        width: 25%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #who {
+        height: 20%;
+    }
+    #searchButtom {
+        height: 20%;
+        width: 70%;
+    }
+    h6 {
+        width: 25%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #footer {
+        height: 220px;
+        float: center;
+        background-color: LemonChiffon;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 2em;
+    }
+}

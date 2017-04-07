@@ -2,14 +2,15 @@ var map, infoWindow;
 var request;
 var service;
 var markers = [];
+var currPosition;
 
 function initMap(){
   // set starting point as LatLng object at RGU coordinates
-  var startingPoint = new google.maps.LatLng(-37.8182574, 144.9658713);
-  // create a map obj starting from start point with a certain zoom, and bind it to the placeHolder div
-  map = new google.maps.Map(document.getElementById('placeHolderMaps'), {
+  currPosition = new google.maps.LatLng(-37.8182574, 144.9658713);
+  // create a map obj starting from start point with a certain zoom, and bind it to the placeHolder div, need the [0] to return the HTML Dom and not the JQuery object itself
+  map = new google.maps.Map($('#placeHolderMaps')[0], {
     // could have set it directly with {lat: -34.397, lng: 150.644}
-    center: startingPoint,
+    center: currPosition,
     zoom: 13
   });
 
@@ -19,9 +20,9 @@ function initMap(){
   //try to set the starting position to the user current one
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function(position){
-      startingPoint = new  google.maps.LatLng(position.coords.latitude, position.coords.longitude );
-      map.setCenter(startingPoint);
-      request = createRequest(startingPoint);
+      currPosition = new  google.maps.LatLng(position.coords.latitude, position.coords.longitude );
+      map.setCenter(currPosition);
+      request = createRequest(currPosition);
       // nearbySearch method of PlaceService return an array of PlaceResult object dependind on the request
       service.nearbySearch(request, callback);
     }, function(){
@@ -31,13 +32,9 @@ function initMap(){
     handleLocationError(true, infoWindow);
   }
 
-
-
-
   // Nearby Search Request as Places API
   // initialize service as PlacesService on the map
   service = new google.maps.places.PlacesService(map);
-
 
   // additional function to move the center of the research depending on where we rightclick on the map
   google.maps.event.addListener(map, 'rightclick', function(event){

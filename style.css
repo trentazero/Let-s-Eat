@@ -87,9 +87,12 @@ img {
 /*setting the design of the google maps place holder: borders radius*/
 
 #placeHolderMaps {
+    width: 400px;
+    height: 400px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     background: #C1392B;
+    margin: 20px;
     padding: 5px;
 }
 

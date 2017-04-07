@@ -1,47 +1,58 @@
-var map;
-var infoWindow;
-
+var map, infoWindow;
 var request;
 var service;
 var markers = [];
 
-function initialize(){
+function initMap(){
   // set starting point as LatLng object at RGU coordinates
-  var startingPoint = new google.maps.LatLng(57.1184156, -2.1497771);
+  var startingPoint = new google.maps.LatLng(-37.8182574, 144.9658713);
   // create a map obj starting from start point with a certain zoom, and bind it to the placeHolder div
   map = new google.maps.Map(document.getElementById('placeHolderMaps'), {
+    // could have set it directly with {lat: -34.397, lng: 150.644}
     center: startingPoint,
-    zoom: 12
+    zoom: 13
   });
-
-  // initialize the request from starting point, a radius of results and restaurant as a type
-  request = {
-    location: startingPoint,
-    radius : 1500,
-    type: ['restaurant']
-  };
 
   //initialize infoWindow as a InfoWindow object (baloon on top of the place marker)
   infoWindow = new google.maps.InfoWindow();
 
+  //try to set the starting position to the user current one
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(function(position){
+      startingPoint = new  google.maps.LatLng(position.coords.latitude, position.coords.longitude );
+      map.setCenter(startingPoint);
+      request = createRequest(startingPoint);
+      // nearbySearch method of PlaceService return an array of PlaceResult object dependind on the request
+      service.nearbySearch(request, callback);
+    }, function(){
+      handleLocationError(true, infoWindow);
+      });
+  } else {
+    handleLocationError(true, infoWindow);
+  }
+
+
+
+
   // Nearby Search Request as Places API
-  // PlacesService as service
+  // initialize service as PlacesService on the map
   service = new google.maps.places.PlacesService(map);
-  // nearbySearch method of PlaceService return an array of PlaceResult object
-  service.nearbySearch(request, callback);
+
 
   // additional function to move the center of the research depending on where we rightclick on the map
   google.maps.event.addListener(map, 'rightclick', function(event){
     map.setCenter(event.latLng);
     clearResults(markers);
-    var request = {
-      location: event.latLng,
-      radius : 1500,
-      type: ['restaurant']
-    };
+    var request = createRequest(event.latLng);
     service.nearbySearch(request, callback);
   })
 
+}
+
+// helper method to reduce repetition creating a request
+function createRequest(LatLng){
+  // initialize the request from starting point, a radius of results and restaurant as a type
+  return {location: LatLng, radius: 1500, type : ['restaurant']};
 }
 
 // handle the call back
@@ -54,7 +65,7 @@ function callback(results, status) {
   }
 }
 
-//create a marker starting from a single
+//create a marker starting from a single place
 function createMarker(place){
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
@@ -69,6 +80,7 @@ function createMarker(place){
   return marker;
 }
 
+
 function clearResults(markers){
   for(var m in markers){
     markers[m].setMap(null);
@@ -76,4 +88,15 @@ function clearResults(markers){
   markers = [];
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+function handleLocationError(browserHasGeolocation, infoWindow) {
+      var defaultPos = new google.maps.LatLng(-37.8182574, 144.9658713);
+      map.setCenter(defaultPos);
+      service.nearbySearch(createRequest(defaultPos), callback);
+      /*  infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map); */
+      }
+
+google.maps.event.addDomListener(window, 'load', initMap);

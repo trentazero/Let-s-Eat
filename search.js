@@ -9,7 +9,7 @@ function search(){
     loaded();
   } else if(value == 3){
     // Picky
-    alert("Picky");
+    picky();
   } else {
     alert("Life is a mistery")
   }
@@ -37,5 +37,21 @@ function loaded(){
   }
   clearResults(markers);
   service.nearbySearch(request, callback);
-  alert("i work");
+}
+
+function picky(){
+  var str = "";
+  $('.kind:checkbox:checked').each(function() {
+    if(this.checked){
+      str += this.name + " ";
+    }
+  });
+  request = {
+    query: str,
+    location: currPosition,
+    radius: 1500,
+    type : ['restaurant']
+  }
+  clearResults(markers);
+  service.textSearch(request, callback);
 }

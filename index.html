@@ -7,7 +7,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Setting some improvement to display better on any kind of device-->
-    <meta name="viewport" content=width=device-width, initial-scale=1 />
     <!--Referring to style.css-->
     <link href="style.css" rel="stylesheet" type "text/css">
     <!--icons brand set-->
@@ -17,6 +16,9 @@
     <!--favicon-->
     <link rel="icon" href="favicon.ico" type="image/png">
     <!--end favicon-->
+    <!-- Loading the Google Places library for Javascript -->
+    <script type ="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDdinsTEg-WsXIKncOTlp1r2WrdE3Qkctk"> </script>
+    <script type ="text/javascript" src="initialize.js"></script>
 </head>
 
 <body>
@@ -57,7 +59,9 @@
         <!-- place holder for google maps-->
         <img src="Mappa-placeholder.PNG" id="map" width="150">
         <!-- place holder for results area-->
-        <textarea id="resultsArea">Results will appear here!</textarea>
+    </div>
+    <div id="results">
+      <textarea id="resultsArea">Results will appear here!</textarea>
     </div>
 </body>
 

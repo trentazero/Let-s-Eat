@@ -50,6 +50,7 @@ img {
 .cuisine {
     white-space: wrap;
     color: white;
+    display: none;
 }
 
 

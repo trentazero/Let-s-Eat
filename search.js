@@ -56,9 +56,8 @@ function picky(){
   service.textSearch(request, callback);
 }
 
-$("#who").change(function(){
+$(".cuisine").change(function(){
   console.log("I work");
-  alert( "Handler called." );
   if($("select option:selected").val() == 3){
     $(".kind").hide();
   }

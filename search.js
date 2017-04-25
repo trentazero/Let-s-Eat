@@ -11,7 +11,7 @@ function search(){
     // Picky
     picky();
   } else {
-    alert("Life is a mistery")
+    undefinedChoice();
   }
 }
 
@@ -54,4 +54,14 @@ function picky(){
   }
   clearResults(markers);
   service.textSearch(request, callback);
+}
+
+function undefinedChoice(){
+  request = {
+    location: currPosition,
+    radius: 1500,
+    type : ['restaurant']
+  }
+  clearResults(markers);
+  service.nearbySearch(request, callback);
 }

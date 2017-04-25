@@ -38,10 +38,13 @@ function initMap(){
 
   // additional function to move the center of the research depending on where we rightclick on the map
   google.maps.event.addListener(map, 'rightclick', function(event){
-    map.setCenter(event.latLng);
+    currPosition = event.latLng;
+    map.setCenter(currPosition);
     clearResults(markers);
+    search();
+    /*
     var request = createRequest(event.latLng);
-    service.nearbySearch(request, callback);
+    service.nearbySearch(request, callback);*/
   })
 
 }

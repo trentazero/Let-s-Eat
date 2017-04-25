@@ -58,8 +58,10 @@ function picky(){
 
 $("#who").change(function(){
   console.log("I work");
-  if($("select option:selected").val() == 3){
+  if(!$("select option:selected").val() == 3){
     $(".cuisine").hide();
+  }else{
+    $(".cuisine").show();
   }
 });
 

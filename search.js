@@ -56,6 +56,12 @@ function picky(){
   service.textSearch(request, callback);
 }
 
+$("#who").change(function(){
+  if($("select option:selected").val() == 3){
+    $(".kind").hide();
+  }
+});
+
 function undefinedChoice(){
   request = {
     location: currPosition,

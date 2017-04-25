@@ -58,6 +58,7 @@ function picky(){
 
 $("#who").change(function(){
   console.log("I work");
+  alert( "Handler called." );
   if($("select option:selected").val() == 3){
     $(".kind").hide();
   }

@@ -59,9 +59,9 @@ function picky(){
 $("#who").change(function(){
   console.log("I work");
   if($("select option:selected").val() == 3){
-    $(".cuisine").show("slow");
+    $(".cuisine").show("slow", "swing");
   }else{
-    $(".cuisine").hide("slow");
+    $(".cuisine").hide("slow", "swing");
   }
 });
 

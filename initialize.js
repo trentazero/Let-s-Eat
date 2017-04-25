@@ -99,4 +99,4 @@ function handleLocationError(browserHasGeolocation, infoWindow) {
         infoWindow.open(map); */
       }
 
-google.maps.event.addDomListener(window, 'load', initMap);
+//google.maps.event.addDomListener(window, 'load', initMap);

@@ -56,10 +56,10 @@ function picky(){
   service.textSearch(request, callback);
 }
 
-$(".cuisine").change(function(){
+$("#who").change(function(){
   console.log("I work");
   if($("select option:selected").val() == 3){
-    $(".kind").hide();
+    $(".cuisine").hide();
   }
 });
 

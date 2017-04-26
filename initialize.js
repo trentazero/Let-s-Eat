@@ -98,7 +98,8 @@ function initMap(){
       }
       console.log(place);
       console.log(bounds);
-      currPosition = new google.maps.LatLng(-37.8182574, 144.9658713);
+      newPosition = new google.maps.LatLng((bounds.b.b + bounds.b.f)/2), ((bounds.b.b + bounds.b.f)/2));
+      console.log(newPosition)
     });
     map.fitBounds(bounds);
   }); /* end */

@@ -81,10 +81,10 @@ function picky(){
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
       map: map,
-      icon: icons[this.name],
+      icon: icons[str],
       position: place.geometry.location
     });
-    console.log(str);
+    console.log(icons[str]);
 
     google.maps.event.addListener(marker, 'click', function(){
       infoWindow.setContent(place.name);

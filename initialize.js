@@ -79,8 +79,9 @@ function initMap(){
         anchor: new google.maps.Point(17, 34),
         scaledSize: new google.maps.Size(25, 25)
       };
+      console.log(place);
 
-      // Create a marker for each place.
+      // generate a marker for the new position
       /*
       markers.push(new google.maps.Marker({
         map: map,

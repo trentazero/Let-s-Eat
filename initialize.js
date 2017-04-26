@@ -13,6 +13,7 @@ function initMap(){
     center: currPosition,
     zoom: 13
   });
+  map.setMapTypeId(google.maps.MapTypeId.HYBRID);
 
   //initialize infoWindow as a InfoWindow object (baloon on top of the place marker)
   infoWindow = new google.maps.InfoWindow();

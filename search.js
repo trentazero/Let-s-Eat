@@ -50,6 +50,7 @@ function picky(){
     sushi: iconBase + "Sushi.png",
     british: iconBase + "UK.png"
   };
+
   var str = "";
   clearResults(markers);
   //for each .kind checked add name to the search string
@@ -78,10 +79,19 @@ function picky(){
   }
 
   function createPickyMarker(place){
+    var ristoImage = {
+    url: icons[str],
+    // This marker is 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(30, 20),
+    // The origin for this image is (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // The anchor for this image is the base of the flagpole at (0, 32).
+    anchor: new google.maps.Point(0, 20)
+  };
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
       map: map,
-      icon: icons[str],
+      icon: ristoImage,
       position: place.geometry.location
     });
     console.log(icons[str]);

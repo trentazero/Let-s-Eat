@@ -5,7 +5,7 @@ var markers = [];
 var currPosition;
 
 function initMap(){
-  // set starting point as LatLng object at RGU coordinates
+  // set starting point as LatLng object at Melbourne if it won't autoload the current position
   currPosition = new google.maps.LatLng(-37.8182574, 144.9658713);
   // create a map obj starting from start point with a certain zoom, and bind it to the placeHolder div, need the [0] to return the HTML Dom and not the JQuery object itself
   map = new google.maps.Map($('#placeHolderMaps')[0], {

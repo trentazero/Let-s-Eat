@@ -96,7 +96,9 @@ function initMap(){
       } else {
         bounds.extend(place.geometry.location);
       }
+      console.log(place);
       console.log(bounds);
+      currPosition = new google.maps.LatLng(-37.8182574, 144.9658713);
     });
     map.fitBounds(bounds);
   }); /* end */

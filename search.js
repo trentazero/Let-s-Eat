@@ -79,7 +79,6 @@ function picky(){
 
   function createPickyMarker(place){
     var placeLoc = place.geometry.location;
-    var icons
     var marker = new google.maps.Marker({
       map: map,
       icon: icons[this.name],

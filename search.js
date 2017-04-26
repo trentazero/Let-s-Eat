@@ -40,8 +40,18 @@ function loaded(){
 }
 
 function picky(){
-  clearResults(markers);
+  var iconBase = "https://letseat.azurewebsites.net/img/";
+  var icons = {
+    burger: iconBase + "Burger.png",
+    chinese: iconBase + "Chinese.png",
+    indian: iconBase + "Indian.png",
+    italian: iconBase + "Italian.png",
+    pizza: iconBase + "Pizza.png",
+    sushi: iconBase + "Sushi.png",
+    british: iconBase + "UK.png"
+  };
   var str = "";
+  clearResults(markers);
   //for each .kind checked add name to the search string
   $('.kind:checkbox:checked').each(function() {
     if(this.checked){
@@ -52,20 +62,28 @@ function picky(){
         radius: 1500,
         type : ['restaurant']
       }
-      var iconBase = "https://letseat.azurewebsites.net/img/";
-      var icons = {
-        burger: iconBase + "Burger.png",
-        chinese: iconBase + "Chinese.png",
-        indian: iconBase + "Indian.png",
-        italian: iconBase + "Italian.png",
-        pizza: iconBase + "Pizza.png",
-        sushi: iconBase + "Sushi.png",
-        uk: iconBase + "UK.png"
-      };
 
-      service.textSearch(request, callback);
+      service.textSearch(request, pickyCallback);
     }
   });
+
+  //nested functions
+  function pickyCallback(results, status) {
+    if(status == google.maps.places.PlacesServiceStatus.OK){
+      for(var i = 0; i < results.length; i++){
+        //push into the markers array a new created marker from the results of the callback
+        markers.push(createPickyMarker(results[i]));
+      }
+    }
+  }
+
+  function createPickyMarker(place){
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+      map: map,
+      icon: icons.(this.name),
+      position: place.geometry.location
+    });
 
 
 

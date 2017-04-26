@@ -13,7 +13,8 @@ function initMap(){
     center: currPosition,
     zoom: 13
   });
-  map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+  //optional alternative map style
+  //map.setMapTypeId(google.maps.MapTypeId.HYBRID);
 
   //initialize infoWindow as a InfoWindow object (baloon on top of the place marker)
   infoWindow = new google.maps.InfoWindow();
@@ -36,6 +37,66 @@ function initMap(){
   // Nearby Search Request as Places API
   // initialize service as PlacesService on the map
   service = new google.maps.places.PlacesService(map);
+
+  // initialize searchBox
+  var input = document.getElementById('searchBox');
+  var searchBox = new google.maps.places.SearchBox(input);
+  //grasshopper
+  //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+  // connect the range of results to the present bounds of the map
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+  //start of searchBox autocompletition
+  //
+  searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    /**/
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+  }); /* end */
 
   // additional function to move the center of the research depending on where we rightclick on the map
   google.maps.event.addListener(map, 'rightclick', function(event){
@@ -93,11 +154,7 @@ function handleLocationError(browserHasGeolocation, infoWindow) {
       var defaultPos = new google.maps.LatLng(-37.8182574, 144.9658713);
       map.setCenter(defaultPos);
       service.nearbySearch(createRequest(defaultPos), callback);
-      /*  infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map); */
+
       }
 
 //google.maps.event.addDomListener(window, 'load', initMap);

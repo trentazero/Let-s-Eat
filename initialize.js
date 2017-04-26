@@ -98,10 +98,10 @@ function initMap(){
       }
       //console.log(place);
       //currPosition = new google.maps.LatLng(((bounds.b.b + bounds.b.f)/2), ((bounds.f.b + bounds.f.f)/2));
-      var newLat = ((bounds.b.b + bounds.b.f)/2);
-      var newLng = ((bounds.f.b + bounds.f.f)/2)
+      var newLng = ((bounds.b.b + bounds.b.f)/2);
+      var newLat = ((bounds.f.b + bounds.f.f)/2)
 
-      currPosition = new google.maps.LatLng(-37.8182574, 144.9658713);
+      currPosition = new google.maps.LatLng(newLat, newLng);
       console.log(newLat);
       console.log(newLng);
 

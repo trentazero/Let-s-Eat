@@ -102,7 +102,8 @@ function initMap(){
       //console.log((bounds.b.b + bounds.b.f)/2);
       //console.log((bounds.f.b + bounds.f.f)/2);
       map.setCenter(currPosition);
-      console.log(currPosition);
+      clearResults(markers);
+      search();
     });
     map.fitBounds(bounds);
   }); /* end */

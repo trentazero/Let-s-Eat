@@ -12,7 +12,7 @@ function initMap(){
     // could have set it directly with {lat: -34.397, lng: 150.644}
     center: currPosition,
     zoom: 13
-    mapTypeId: google.maps.MapTypeId.HYBRID
+    mapTypeId: HYBRID
   });
 
   //initialize infoWindow as a InfoWindow object (baloon on top of the place marker)

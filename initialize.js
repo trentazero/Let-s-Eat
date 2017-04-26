@@ -98,9 +98,10 @@ function initMap(){
       }
       //console.log(place);
       console.log(bounds);
-      var newPosition = new google.maps.LatLng(((bounds.b.b + bounds.b.f)/2), ((bounds.b.b + bounds.b.f)/2));
-      console.log((bounds.b.b + bounds.b.f)/2)
-      //console.log(newPosition);
+      var newPosition = new google.maps.LatLng(((bounds.b.b + bounds.b.f)/2), ((bounds.f.b + bounds.f.f)/2));
+      console.log((bounds.b.b + bounds.b.f)/2);
+      console.log((bounds.f.b + bounds.f.f)/2);
+      console.log(newPosition);
     });
     map.fitBounds(bounds);
   }); /* end */

@@ -98,6 +98,7 @@ function initMap(){
       }
     });
     map.fitBounds(bounds);
+    map.setCenter(place.geometry.location);
   }); /* end */
 
   // additional function to move the center of the research depending on where we rightclick on the map

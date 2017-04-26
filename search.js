@@ -86,6 +86,13 @@ function picky(){
       position: place.geometry.location
     });
 
+    google.maps.event.addListener(marker, 'click', function(){
+      infoWindow.setContent(place.name);
+      infoWindow.open(map, this);
+    });
+    return marker;
+  }
+
 
 
 

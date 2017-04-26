@@ -97,7 +97,7 @@ function initMap(){
         bounds.extend(place.geometry.location);
       }
       //console.log(place);
-      console.log(bounds);
+      console.log(currPosition);
       currPosition = new google.maps.LatLng(((bounds.b.b + bounds.b.f)/2), ((bounds.f.b + bounds.f.f)/2));
       //console.log((bounds.b.b + bounds.b.f)/2);
       //console.log((bounds.f.b + bounds.f.f)/2);

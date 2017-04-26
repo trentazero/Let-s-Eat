@@ -40,20 +40,24 @@ function loaded(){
 }
 
 function picky(){
+  clearResults(markers);
   var str = "";
+  //for each .kind checked add name to the search string
   $('.kind:checkbox:checked').each(function() {
     if(this.checked){
       str += this.name + " ";
+      request = {
+        query: str,
+        location: currPosition,
+        radius: 1500,
+        type : ['restaurant']
+      }
+      service.textSearch(request, callback);
     }
   });
-  request = {
-    query: str,
-    location: currPosition,
-    radius: 1500,
-    type : ['restaurant']
-  }
-  clearResults(markers);
-  service.textSearch(request, callback);
+
+
+
 }
 
 // hide/show effect on the select/option div for kind of cuisine

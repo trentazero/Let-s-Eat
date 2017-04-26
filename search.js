@@ -45,16 +45,30 @@ function picky(){
   //for each .kind checked add name to the search string
   $('.kind:checkbox:checked').each(function() {
     if(this.checked){
-      str += this.name + " ";
+      str = this.name;
       request = {
         query: str,
         location: currPosition,
         radius: 1500,
         type : ['restaurant']
       }
+      var iconBase = "https://letseat.azurewebsites.net/img/";
+      var icons = {
+        burger: iconBase + "Burger.png",
+        chinese: iconBase + "Chinese.png",
+        indian: iconBase + "Indian.png",
+        italian: iconBase + "Italian.png",
+        pizza: iconBase + "Pizza.png",
+        sushi: iconBase + "Sushi.png",
+        uk: iconBase + "UK.png"
+      };
+
       service.textSearch(request, callback);
     }
   });
+
+
+
 
 
 

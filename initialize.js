@@ -7,7 +7,6 @@ var currPosition;
 function initMap(){
   // set starting point as LatLng object at Melbourne if it won't autoload the current position
   currPosition = new google.maps.LatLng(-37.8182574, 144.9658713);
-  console.log(currPosition);
   // create a map obj starting from start point with a certain zoom, and bind it to the placeHolder div, need the [0] to return the HTML Dom and not the JQuery object itself
   map = new google.maps.Map($('#placeHolderMaps')[0], {
     // could have set it directly with {lat: -34.397, lng: 150.644}
@@ -98,7 +97,8 @@ function initMap(){
         bounds.extend(place.geometry.location);
       }
       //console.log(place);
-      currPosition = new google.maps.LatLng(((bounds.b.b + bounds.b.f)/2), ((bounds.f.b + bounds.f.f)/2));
+      //currPosition = new google.maps.LatLng(((bounds.b.b + bounds.b.f)/2), ((bounds.f.b + bounds.f.f)/2));
+      currPosition = new google.maps.LatLng(-37.8182574, 144.9658713);
       //console.log((bounds.b.b + bounds.b.f)/2);
       //console.log((bounds.f.b + bounds.f.f)/2);
       map.setCenter(currPosition);

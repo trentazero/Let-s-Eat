@@ -84,16 +84,20 @@ img {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#C1392B), to(#F7DAA2), color-stop(0.4, #C1392B));
 }
 
+#outerDiv {
+  width:100%;
+}
+
 
 /*setting the design of the google maps place holder: borders radius*/
 
 #placeHolderMaps {
-    width: 400px;
+    width: 50%;
     height: 400px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     background: #C1392B;
-    margin: 20px;
+    margin: 0 auto;
     padding: 5px;
 }
 

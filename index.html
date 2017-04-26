@@ -17,9 +17,9 @@
     <link rel="icon" href="favicon.ico" type="image/png">
     <!--end favicon-->
     <!-- Loading the Google Places library for Javascript -->
-    <script type ="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type ="text/javascript" src="initialize.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB0rBdg_CXu0z-7t_YGyxS9tYAr1y0GqU&libraries=places&callback=initMap"  type="text/javascript"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="initialize.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB0rBdg_CXu0z-7t_YGyxS9tYAr1y0GqU&libraries=places&callback=initMap" type="text/javascript"></script>
 
 
 </head>
@@ -31,16 +31,16 @@
             <input id="searchBox" type="text" placeholder="Where do you want to eat?" />
             <br>
             <br>
-        <select id="who">
+            <select id="who">
           <option>How are you?</option>
           <option value="1">"I am Broke"</option>
           <option value="2">"I am Loaded"</option>
           <option value="3">"I am Picky"</option>
         </select>
-        <br>
+            <br>
 
             <!--check box to choose the kind of food-->
-      <div class="cuisine" style="font-size:15px"><strong>
+            <div class="cuisine" style="font-size:15px"><strong>
         <input class="kind" type="checkbox" name="british" value="1"/>British</option>
         <input class="kind" type="checkbox" name="burger" value="2"/>Burger</option>
         <input class="kind" type="checkbox" name="chinese" value="3"/>Chinese</option>
@@ -58,13 +58,15 @@
     </div>
     <br>
     <br>
-    <div id="placeHolderMaps">
-        <!-- place holder for google maps-->
-        <img src="Mappa-placeholder.PNG" id="map" width="150">
-        <!-- place holder for results area-->
+    <div id="outerDiv">
+        <div id="placeHolderMaps">
+            <!-- place holder for google maps-->
+            <img src="Mappa-placeholder.PNG" id="map" width="150">
+            <!-- place holder for results area-->
+        </div>
     </div>
     <div id="results">
-      <textarea id="resultsArea">Results will appear here!</textarea>
+        <textarea id="resultsArea">Results will appear here!</textarea>
     </div>
 </body>
 
@@ -73,8 +75,8 @@
 <br>
 <hr />
 <div id="footer">
-    <script type ="text/javascript" src="search.js"></script>
-    <script type ="text/javascript" src="placesSearchbar.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="placesSearchbar.js"></script>
     <h6> Serena Battistoni <i style="font-size:24px; color=black" class="fa"><a href="https://www.linkedin.com/in/serenabattistoni/">&nbsp; &#xf08c; &nbsp;</i></a>
       Alessio Gadaleta <i style="font-size:24px" class="fa"> <a href="https://www.linkedin.com/in/alessiogadaleta/">&nbsp; &#xf08c; &nbsp;</i></a>
       Nicolò Silvani <i style="font-size:24px" class="fa"> <a href="https://www.linkedin.com/in/nicol%C3%B3-silvani/">&nbsp; &#xf08c; &nbsp;</i></a>

@@ -101,8 +101,8 @@ function initMap(){
       currPosition = new google.maps.LatLng(((bounds.b.b + bounds.b.f)/2), ((bounds.f.b + bounds.f.f)/2));
       //console.log((bounds.b.b + bounds.b.f)/2);
       //console.log((bounds.f.b + bounds.f.f)/2);
-      //map.setCenter(newPosition);
-      //console.log(newPosition);
+      map.setCenter(currPosition);
+      console.log(currPosition);
     });
     map.fitBounds(bounds);
   }); /* end */

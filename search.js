@@ -84,6 +84,7 @@ function picky(){
       icon: icons[this.name],
       position: place.geometry.location
     });
+    console.log(icons[this.name]);
 
     google.maps.event.addListener(marker, 'click', function(){
       infoWindow.setContent(place.name);

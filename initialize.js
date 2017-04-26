@@ -79,7 +79,7 @@ function initMap(){
         anchor: new google.maps.Point(17, 34),
         scaledSize: new google.maps.Size(25, 25)
       };
-      console.log(place);
+
 
       // generate a marker for the new position
       /*
@@ -96,9 +96,9 @@ function initMap(){
       } else {
         bounds.extend(place.geometry.location);
       }
+      console.log(bounds);
     });
     map.fitBounds(bounds);
-    map.setCenter(place.geometry.location);
   }); /* end */
 
   // additional function to move the center of the research depending on where we rightclick on the map

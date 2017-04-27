@@ -74,14 +74,15 @@ function picky(){
   //nested functions
   function pickyCallback(results, status) {
     markers = [];
+    console.log(results);
+    console.log(searchString);
+    console.log(icons[searchString]);
     if(status == google.maps.places.PlacesServiceStatus.OK){
       for(var i = 0; i < results.length; i++){
         //push into the markers array a new created marker from the results of the callback
         markers.push(createPickyMarker(results[i]));
       }
-      console.log(results);
-      console.log(searchString);
-      console.log(icons[searchString]);
+
       markers = [];
       results = [];
     }

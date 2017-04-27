@@ -65,6 +65,7 @@ function picky(){
       }
 
       service.textSearch(request, pickyCallback);
+      console.log(str);
 
     }
   });
@@ -77,7 +78,6 @@ function picky(){
         //push into the markers array a new created marker from the results of the callback
         markers.push(createPickyMarker(results[i]));
       }
-      console.log(markers);
       markers = [];
       results = [];
     }

@@ -1,4 +1,4 @@
-var searchString = "";
+
 
 function search(){
   var value = $("#who").val();
@@ -52,7 +52,7 @@ function picky(){
     sushi: iconBase + "Sushi.png",
     british: iconBase + "UK.png"
   };
-
+  var searchString = "";
   var resultsHandler = [];
   clearResults(markers);
   //for each .kind checked add name to the search string

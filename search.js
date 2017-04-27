@@ -1,3 +1,5 @@
+var str = "";
+
 function search(){
   var value = $("#who").val();
   if(value == 1){
@@ -51,7 +53,7 @@ function picky(){
     british: iconBase + "UK.png"
   };
 
-  var str = "";
+
   clearResults(markers);
   //for each .kind checked add name to the search string
   $('.kind:checkbox:checked').each(function() {

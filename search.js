@@ -54,9 +54,12 @@ function picky(){
   };
   var searchString = "";
   var resultsHandler = [];
+  var maxResults = 20;
+  var numOfChoice = 0;
   clearResults(markers);
   //for each .kind checked add name to the search string
   $('.kind:checkbox:checked').each(function() {
+    numOfChoice++;
     if(this.checked){
       searchString = this.name;
       request = {
@@ -65,11 +68,8 @@ function picky(){
         radius: 1500,
         type : ['restaurant']
       }
-      console.log("inside loop")
-      console.log(searchString);
 
       resultsHandler.push(icons[searchString])
-      console.log(resultsHandler.toString());
       service.textSearch(request, pickyCallback);
 
     }
@@ -78,11 +78,9 @@ function picky(){
   //nested functions
   function pickyCallback(results, status) {
     markers = [];
-    console.log("inside call back");
-    console.log(searchString);
-    console.log(icons[searchString]);
+    maxResults /= numOfChoice;
     if(status == google.maps.places.PlacesServiceStatus.OK){
-      for(var i = 0; i < results.length; i++){
+      for(var i = 0; i < (results.length < maxResults ? results.length : maxResults); i++){
         //push into the markers array a new created marker from the results of the callback
         markers.push(createPickyMarker(results[i]));
       }

@@ -78,8 +78,6 @@ function picky(){
   maxResults /= numOfChoice;
   //nested functions
   function pickyCallback(results, status) {
-    markers = [];
-
     if(status == google.maps.places.PlacesServiceStatus.OK){
       for(var i = 0; i < (results.length < maxResults ? results.length : maxResults); i++){
         //push into the markers array a new created marker from the results of the callback

@@ -159,8 +159,10 @@ function createMarker(place){
 
 function clearResults(markers){
   for(var m in markers){
+    //remove markers from the map
     markers[m].setMap(null);
   }
+  //clear the markers array
   markers = [];
 }
 

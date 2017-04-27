@@ -76,6 +76,7 @@ function picky(){
         markers.push(createPickyMarker(results[i]));
       }
     }
+    markers = [];
   }
 
   function createPickyMarker(place){

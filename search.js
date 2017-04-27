@@ -53,7 +53,7 @@ function picky(){
     british: iconBase + "UK.png"
   };
 
-
+  var resultsHandler = [];
   clearResults(markers);
   //for each .kind checked add name to the search string
   $('.kind:checkbox:checked').each(function() {
@@ -67,7 +67,9 @@ function picky(){
       }
       console.log("inside loop")
       console.log(searchString);
-      console.log(icons[searchString]);
+
+      resultsHandler.push(icons[searchString])
+      console.log(resultsHandler.toString());
       service.textSearch(request, pickyCallback);
 
     }
@@ -76,8 +78,7 @@ function picky(){
   //nested functions
   function pickyCallback(results, status) {
     markers = [];
-    console.log("inside call back")
-    setTimeout(function(){ }, 3000);
+    console.log("inside call back");
     console.log(searchString);
     console.log(icons[searchString]);
     if(status == google.maps.places.PlacesServiceStatus.OK){

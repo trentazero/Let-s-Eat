@@ -86,15 +86,12 @@ function picky(){
         //push into the markers array a new created marker from the results of the callback
         markers.push(createPickyMarker(results[i]));
       }
-
-      markers = [];
-      results = [];
     }
   }
 
   function createPickyMarker(place){
     var ristoImage = {
-    url: icons[searchString],
+    url: resultsHandler[0],
     // This marker is 20 pixels wide by 32 pixels high.
     size: new google.maps.Size(30, 22),
     // The origin for this image is (0, 0).

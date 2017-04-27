@@ -54,7 +54,7 @@ function picky(){
   var str = "";
   clearResults(markers);
   //for each .kind checked add name to the search string
-  $('.kind:checkbox:checked').each(function() {vv
+  $('.kind:checkbox:checked').each(function() {
     if(this.checked){
       str = this.name;
       request = {

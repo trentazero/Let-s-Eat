@@ -99,7 +99,6 @@ function picky(){
       icon: ristoImage,
       position: place.geometry.location
     });
-    console.log(icons[str]);
 
     google.maps.event.addListener(marker, 'click', function(){
       infoWindow.setContent(place.name);

@@ -63,9 +63,9 @@ function picky(){
         radius: 1500,
         type : ['restaurant']
       }
-
-      service.textSearch(request, pickyCallback);
       markers = [];
+      service.textSearch(request, pickyCallback);
+
     }
   });
 

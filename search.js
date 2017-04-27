@@ -54,7 +54,7 @@ function picky(){
   var str = "";
   clearResults(markers);
   //for each .kind checked add name to the search string
-  $('.kind:checkbox:checked').each(function() {
+  $('.kind:checkbox:checked').each(function() {vv
     if(this.checked){
       str = this.name;
       request = {
@@ -77,6 +77,7 @@ function picky(){
         //push into the markers array a new created marker from the results of the callback
         markers.push(createPickyMarker(results[i]));
       }
+      results = [];
     }
   }
 
@@ -84,7 +85,7 @@ function picky(){
     var ristoImage = {
     url: icons[str],
     // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(30, 20),
+    size: new google.maps.Size(30, 22),
     // The origin for this image is (0, 0).
     origin: new google.maps.Point(0, 0),
     // The anchor for this image is the base of the flagpole at (0, 32).

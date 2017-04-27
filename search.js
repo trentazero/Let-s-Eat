@@ -65,7 +65,9 @@ function picky(){
         radius: 1500,
         type : ['restaurant']
       }
-
+      console.log("inside loop")
+      console.log(searchString);
+      console.log(icons[searchString]);
       service.textSearch(request, pickyCallback);
 
     }
@@ -74,7 +76,7 @@ function picky(){
   //nested functions
   function pickyCallback(results, status) {
     markers = [];
-    console.log(results);
+    console.log("inside call back")
     console.log(searchString);
     console.log(icons[searchString]);
     if(status == google.maps.places.PlacesServiceStatus.OK){

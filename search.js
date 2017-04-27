@@ -65,6 +65,7 @@ function picky(){
       }
 
       service.textSearch(request, pickyCallback);
+      markers = [];
     }
   });
 
@@ -76,7 +77,6 @@ function picky(){
         markers.push(createPickyMarker(results[i]));
       }
     }
-    markers = [];
   }
 
   function createPickyMarker(place){

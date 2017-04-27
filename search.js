@@ -77,6 +77,7 @@ function picky(){
   function pickyCallback(results, status) {
     markers = [];
     console.log("inside call back")
+    setTimeout(function(){ }, 3000);
     console.log(searchString);
     console.log(icons[searchString]);
     if(status == google.maps.places.PlacesServiceStatus.OK){

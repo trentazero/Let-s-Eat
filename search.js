@@ -77,7 +77,10 @@ function picky(){
         //push into the markers array a new created marker from the results of the callback
         markers.push(createPickyMarker(results[i]));
       }
+      console.log(str);
+      console.log(icons[str]);
       console.log(results);
+      console.log(str);
       console.log(icons[str]);
       markers = [];
       results = [];

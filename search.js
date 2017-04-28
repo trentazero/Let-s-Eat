@@ -120,9 +120,10 @@ function picky() {
         clickMeAgain = true;
     }
 }
+var output = "";
 function getUrl (placeId){
   var placeUrl = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeId + "&key=AIzaSyDB0rBdg_CXu0z-7t_YGyxS9tYAr1y0GqU"
-  var output = "";
+
   console.log(placeUrl);
   $.getJSON(placeUrl, function(data) {
     console.log(data.result.name);

@@ -41,6 +41,8 @@ function loaded(){
   service.nearbySearch(request, callback);
 }
 
+var clickMeAgain = true;
+
 function picky(){
   var iconBase = "https://letseat.azurewebsites.net/img/";
   var icons = {
@@ -110,6 +112,11 @@ function picky(){
     });
     return marker;
   }
+  if(clickMeAgain){
+  $("#searchButtom").prop('value', 'Click me Baby one more time!');
+  clickMeAgain = false;
+}
+else{}
 }
 
 // hide/show effect on the select/option div for kind of cuisine

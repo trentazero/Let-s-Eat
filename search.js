@@ -69,7 +69,9 @@ function picky(){
         type : ['restaurant']
       }
 
-      resultsHandler.push(icons[searchString])
+      resultsHandler.push(icons[searchString]);
+      // needed to clear the previous results in memory
+      service.textSearch(emptyRequest, pickyCallback);
       service.textSearch(request, pickyCallback);
 
     }
@@ -128,4 +130,11 @@ function undefinedChoice(){
   }
   clearResults(markers);
   service.nearbySearch(request, callback);
+}
+
+var emptyRequest = {
+  query: "",
+  location: currPosition,
+  radius: 1500,
+  type : ['restaurant']
 }

@@ -107,7 +107,7 @@ function picky(){
     });
 
     google.maps.event.addListener(marker, 'click', function(){
-      var placeUrl = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + place.place_id + "&key=AIzaSyDB0rBdg_CXu0z-7t_YGyxS9tYAr1y0GqU" +"&callback=?";
+      var placeUrl = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + place.place_id + "&key=AIzaSyDB0rBdg_CXu0z-7t_YGyxS9tYAr1y0GqU";
       console.log(placeUrl);
       $.getJSON(placeUrl, function(data){
         console.log(data);

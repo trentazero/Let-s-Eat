@@ -106,8 +106,8 @@ function picky() {
 
         google.maps.event.addListener(marker, 'click', function() {
           // need CORS Chrome extension on!!!
-            getUrl(place.place_id);
-            console.log(output);
+
+            var output = getUrl(place.place_id);
             var innerContent = "<h3>" + output + "</h3>" +
                 "<p>" + place.formatted_address + "</p>";
             infoWindow.setContent(innerContent);
@@ -128,7 +128,7 @@ function getUrl (placeId){
   var placeUrl = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeId + "&key=AIzaSyDB0rBdg_CXu0z-7t_YGyxS9tYAr1y0GqU"
   $.getJSON(placeUrl, function(data) {
     console.log(data.result.name);
-      output = data.result.name;
+      return data.result.name;
   });
 }
 

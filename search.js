@@ -126,8 +126,8 @@ function getUrl (placeId,marker){
       var innerContent = "<h3>" + data.result.name + "</h3>"
       +"<p> Phone Number: " + data.result.international_phone_number + "</p>"
       +"<p> Phone Number: " + data.result.formatted_address + "</p>"
-      +"<p> Rated: " + data.result.formatted_rating + "/5</p><br>"
-      + "<a href=" + data.result.url + "></a>";
+      +"<p> Rated: " + data.result.rating + "/5</p><br>"
+      + "<a href=" + data.result.url + ">More about this restaurant!</a>";
       infoWindow.setContent(innerContent);
       infoWindow.open(map, marker);
   });

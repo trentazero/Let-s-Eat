@@ -15,9 +15,11 @@ $(document).ready(function() {
 
 
 $(document).on("click", ".konami_popup", function(){
-    $(this).text("It works!");
+    $(".konami_popup").trigger("click");
 });
 
 $(document).ready(function(){
-    $(".konami_popup").trigger("click");
+
 });
+
+$(document).konami_code();

@@ -110,7 +110,6 @@ function picky() {
             infoWindow.setContent(innerContent);
             infoWindow.open(map, this);
         });
-        console.log(place);
         return marker;
     }
     if (clickMeAgain) {
@@ -126,7 +125,8 @@ function getUrl (placeId){
   var output = "";
   console.log(placeUrl);
   $.getJSON(placeUrl, function(data) {
-    console.log(data);
+    console.log(data.result.name);
+
       output = data.result.name;
   });
   return output;

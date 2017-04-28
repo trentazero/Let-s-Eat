@@ -13,9 +13,12 @@ $(document).ready(function() {
 	});
 });
 
-/*
-$(document).on("click", ".konami_popup", function(){
-    $(".konami_popup").trigger("click");
-}); */
+$(document).ready(function() {
+  $(".konami_popup").trigger("click");
+}
 
-$(document).konami_code({ callback: $(".konami_popup").trigger("click") })
+var myCallback = function(){
+  $(".konami_popup").trigger("click");
+}
+
+$(document).konami_code({ callback: myCallback })

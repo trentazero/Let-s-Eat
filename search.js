@@ -116,7 +116,10 @@ function picky(){
   $("#searchButtom").prop('value', 'Click me Baby one more time!');
   clickMeAgain = false;
 }
-else{}
+else{
+  $("#searchButtom").prop('value', 'Search!');
+  clickMeAgain = true;
+}
 }
 
 // hide/show effect on the select/option div for kind of cuisine

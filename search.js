@@ -84,7 +84,6 @@ function picky(){
       }
       resultsHandler.shift();
     }
-    console.log(response);
   }
 
   function createPickyMarker(place){

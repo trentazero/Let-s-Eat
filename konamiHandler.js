@@ -13,9 +13,9 @@ $(document).ready(function() {
 	});
 });
 
-
+/*
 $(document).on("click", ".konami_popup", function(){
     $(".konami_popup").trigger("click");
-});
+}); */
 
-$(document).konami_code();
+$(document).konami_code({ callback: $(".konami_popup").trigger("click") })

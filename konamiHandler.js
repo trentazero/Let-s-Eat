@@ -12,3 +12,12 @@ $(document).ready(function() {
 		fixedContentPos: false
 	});
 });
+
+
+$(document).on("click", ".konami_popup", function(){
+    $(this).text("It works!");
+});
+
+$(document).ready(function(){
+    $(".konami_popup").trigger("click");
+});

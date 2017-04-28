@@ -108,6 +108,7 @@ function picky(){
 
     google.maps.event.addListener(marker, 'click', function(){
       infoWindow.setContent(place.name);
+      console.log(place);
       infoWindow.open(map, this);
     });
     return marker;

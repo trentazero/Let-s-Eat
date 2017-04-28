@@ -70,8 +70,6 @@ function picky(){
       }
 
       resultsHandler.push(icons[searchString]);
-      // needed to clear the previous results in memory
-      service.textSearch(emptyRequest, pickyCallback);
       service.textSearch(request, pickyCallback);
 
     }

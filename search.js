@@ -109,12 +109,6 @@ function picky(){
     });
     return marker;
   }
-
-
-
-
-
-
 }
 
 // hide/show effect on the select/option div for kind of cuisine

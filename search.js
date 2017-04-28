@@ -107,6 +107,10 @@ function picky(){
     });
 
     google.maps.event.addListener(marker, 'click', function(){
+      var placeUrl = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + place.id + "&key=AIzaSyDB0rBdg_CXu0z-7t_YGyxS9tYAr1y0GqU"
+      $getJSON(placeUrl, function(data){
+        console.log(data);
+      })
       var innerContent = "<h3>" + place.name+ "</h3>"
       + "<p>" + place.formatted_address + "</p>";
       infoWindow.setContent(innerContent);

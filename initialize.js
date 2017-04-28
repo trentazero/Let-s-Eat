@@ -103,9 +103,6 @@ function initMap(){
       var newLat = ((bounds.f.b + bounds.f.f)/2)
 
       currPosition = new google.maps.LatLng(newLat, newLng);
-      console.log(newLat);
-      console.log(newLng);
-
       map.setCenter(currPosition);
       clearResults(markers);
       search();

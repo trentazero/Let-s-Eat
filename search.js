@@ -12,7 +12,6 @@ function search(){
   } else if(value == 3){
     // Picky
     picky();
-    picky();
   } else {
     undefinedChoice();
   }
@@ -75,7 +74,6 @@ function picky(){
 
     }
   });
-  $(".kind").attr('checked', false);
   maxResults /= numOfChoice;
   //nested functions
   function pickyCallback(results, status) {

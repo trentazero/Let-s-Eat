@@ -15,10 +15,10 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $(".konami_popup").trigger("click");
-}
+});
 
 var myCallback = function(){
   $(".konami_popup").trigger("click");
-}
+};
 
 $(document).konami_code({ callback: myCallback })

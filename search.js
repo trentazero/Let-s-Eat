@@ -74,6 +74,7 @@ function picky(){
 
     }
   });
+  $(".kind").attr('checked', false);
   maxResults /= numOfChoice;
   //nested functions
   function pickyCallback(results, status) {
@@ -120,6 +121,8 @@ $("#who").change(function(){
     $(".cuisine").hide("slow", "swing");
   }
 });
+
+$(".kind").attr('checked', false);
 
 function undefinedChoice(){
   request = {

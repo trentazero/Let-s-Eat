@@ -1,3 +1,4 @@
+var output = "";
 function search() {
     var value = $("#who").val();
     if (value == 1) {
@@ -13,6 +14,7 @@ function search() {
         undefinedChoice();
     }
 }
+
 
 function broke() {
     request = {
@@ -105,6 +107,7 @@ function picky() {
         google.maps.event.addListener(marker, 'click', function() {
           // need CORS Chrome extension on!!!
             getUrl(place.place_id);
+            console.log(output);
             var innerContent = "<h3>" + output + "</h3>" +
                 "<p>" + place.formatted_address + "</p>";
             infoWindow.setContent(innerContent);
@@ -120,14 +123,11 @@ function picky() {
         clickMeAgain = true;
     }
 }
-var output = "";
+
 function getUrl (placeId){
   var placeUrl = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeId + "&key=AIzaSyDB0rBdg_CXu0z-7t_YGyxS9tYAr1y0GqU"
-
-  console.log(placeUrl);
   $.getJSON(placeUrl, function(data) {
     console.log(data.result.name);
-
       output = data.result.name;
   });
 }

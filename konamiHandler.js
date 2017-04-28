@@ -18,8 +18,4 @@ $(document).on("click", ".konami_popup", function(){
     $(".konami_popup").trigger("click");
 });
 
-$(document).ready(function(){
-
-});
-
 $(document).konami_code();

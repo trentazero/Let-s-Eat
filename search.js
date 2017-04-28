@@ -107,7 +107,7 @@ function picky() {
         google.maps.event.addListener(marker, 'click', function() {
           // need CORS Chrome extension on!!!
 
-            getUrl(place.place_id);
+            getUrl(place.place_id,marker);
 
 
         });
@@ -122,7 +122,7 @@ function picky() {
     }
 }
 
-function getUrl (placeId){
+function getUrl (placeId,marker){
   var placeUrl = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeId + "&key=AIzaSyDB0rBdg_CXu0z-7t_YGyxS9tYAr1y0GqU"
   $.getJSON(placeUrl, function(data) {
     console.log(data.result.name);
@@ -130,7 +130,7 @@ function getUrl (placeId){
       // +
         //  "<p>" + place.formatted_address + "</p>";
       infoWindow.setContent(innerContent);
-      infoWindow.open(map, this);
+      infoWindow.open(map, marker);
   });
 }
 

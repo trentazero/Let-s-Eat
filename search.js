@@ -84,6 +84,7 @@ function picky(){
       }
       resultsHandler.shift();
     }
+    console.log(results);
   }
 
   function createPickyMarker(place){
@@ -128,11 +129,4 @@ function undefinedChoice(){
   }
   clearResults(markers);
   service.nearbySearch(request, callback);
-}
-
-var emptyRequest = {
-  query: "",
-  location: currPosition,
-  radius: 1500,
-  type : ['restaurant']
 }

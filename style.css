@@ -53,6 +53,10 @@ img {
     display: none;
 }
 
+.konami_popup {
+  display: none;
+}
+
 
 /*setting the design of the search button*/
 

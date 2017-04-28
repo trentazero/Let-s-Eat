@@ -42,7 +42,6 @@ function loaded(){
 }
 
 function picky(){
-  clearResults(markers);
   var iconBase = "https://letseat.azurewebsites.net/img/";
   var icons = {
     burger: iconBase + "Burger.png",

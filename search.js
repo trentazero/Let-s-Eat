@@ -104,8 +104,8 @@ function picky() {
 
         google.maps.event.addListener(marker, 'click', function() {
           // need CORS Chrome extension on!!!
-            var newJson = getUrl(place.place_id);
-            var innerContent = "<h3>" + newJson + "</h3>" +
+            getUrl(place.place_id);
+            var innerContent = "<h3>" + output + "</h3>" +
                 "<p>" + place.formatted_address + "</p>";
             infoWindow.setContent(innerContent);
             infoWindow.open(map, this);
@@ -130,7 +130,6 @@ function getUrl (placeId){
 
       output = data.result.name;
   });
-  return output;
 }
 
 

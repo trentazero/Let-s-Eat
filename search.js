@@ -12,6 +12,7 @@ function search(){
   } else if(value == 3){
     // Picky
     picky();
+    picky();
   } else {
     undefinedChoice();
   }
@@ -70,7 +71,6 @@ function picky(){
       }
 
       resultsHandler.push(icons[searchString]);
-      service.textSearch(request, pickyCallback);
       service.textSearch(request, pickyCallback);
 
     }

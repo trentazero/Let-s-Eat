@@ -147,9 +147,9 @@ function createMarker(place){
     position: place.geometry.location
   });
 
-  google.maps.event.addListener(marker, 'click', function(){
-    infoWindow.setContent(place.name);
-    infoWindow.open(map, this);
+  google.maps.event.addListener(marker, 'click', function() {
+      // need CORS Chrome extension on!!!
+        getUrl(place.place_id, marker);
   });
   return marker;
 }

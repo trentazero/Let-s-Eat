@@ -13,6 +13,7 @@ $(document).ready(function() {
 	});
 });
 
+//brutally simple konami code connected to an hidden link in the html
 var myCallback = function(){
   $(".konami_popup").trigger("click");
 };

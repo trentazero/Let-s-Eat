@@ -71,6 +71,7 @@ function picky(){
 
       resultsHandler.push(icons[searchString]);
       service.textSearch(request, pickyCallback);
+      service.textSearch(request, pickyCallback);
 
     }
   });
